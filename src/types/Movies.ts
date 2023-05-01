@@ -1,6 +1,11 @@
-export type GetMoviesResponse = {
+type MovieGenre = {
+  id: number;
+  name: string;
+};
+
+export type GetMoviesResponse<T> = {
   page: number;
-  results: MovieType[];
+  results: T;
   total_pages: number;
   total_results: number;
 };
@@ -8,8 +13,12 @@ export type GetMoviesResponse = {
 export type MovieType = {
   id: number;
   title: string;
+  original_title: string;
+  tagline: string;
+  budget: number;
   overview: string;
   adult: boolean;
   poster_path: string;
   vote_average: number;
+  genres: MovieGenre[];
 };

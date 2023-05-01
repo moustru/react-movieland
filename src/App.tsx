@@ -1,26 +1,12 @@
-import { ChangeEvent, FC, useState } from "react";
 import "./App.css";
-import { observer } from "mobx-react-lite";
-import { MovieList } from "./components/MovieList/MovieList";
-import { moviesStore } from "./store/movies";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router";
 
-const AppComponent: FC = () => {
-  const [rating, setRating] = useState("");
-
-  const filterByRating = (e: ChangeEvent<HTMLInputElement>) => {
-    setRating(e.target.value);
-    moviesStore.setFilters("rating", e.target.value);
-  };
-
+export default function AppComponent() {
   return (
     <div className="content">
       <h1 className="content__title">Movieland</h1>
-      <div className="content__filters">
-        <input value={rating} onInput={filterByRating} />
-      </div>
-      <MovieList />
+      <RouterProvider router={router} />
     </div>
   );
-};
-
-export const App = observer(AppComponent);
+}

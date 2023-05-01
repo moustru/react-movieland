@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
-  /* margin: 0;
-  padding: 0; */
+  outline: none;
 }
 
 :root {
@@ -21,6 +20,7 @@
 }
 
 a {
+  color: inherit;
   text-decoration: inherit;
 }
 
@@ -39,4 +39,19 @@ h1 {
   font-size: 4rem;
   line-height: 1.1;
   font-weight: 800;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input {
+  padding: 10px;
+  color: #fff;
+  font-family: "Rubik", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
 }

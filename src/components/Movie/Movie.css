@@ -18,7 +18,18 @@
 
   &__rating {
     font-size: 2rem;
-    color: #eece42;
+
+    &--good {
+      color: green;
+    }
+
+    &--normal {
+      color: #a5a5a5;
+    }
+
+    &--bad {
+      color: red;
+    }
   }
 
   &__title {

@@ -10,6 +10,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
+  --text-color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
   font-synthesis: none;
@@ -34,8 +35,16 @@ body {
   min-height: 100vh;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
+}
+
+h1 {
   font-size: 4rem;
   line-height: 1.1;
   font-weight: 800;
@@ -48,10 +57,26 @@ input::-webkit-inner-spin-button {
 }
 
 .input {
-  padding: 10px;
+  padding: 0.625rem;
   color: #fff;
   font-family: "Rubik", system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #fff;
+}
+
+.rating {
+  font-size: 2rem;
+
+  &--good {
+    color: green;
+  }
+
+  &--normal {
+    color: #a5a5a5;
+  }
+
+  &--bad {
+    color: red;
+  }
 }

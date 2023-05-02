@@ -30,7 +30,7 @@ class MoviesStore {
 
   get filteredMovies() {
     return this.moviesData.movies.filter(
-      (movie) => movie.vote_average > Number(this.filters.rating)
+      (movie) => movie.vote_average >= Number(this.filters.rating)
     );
   }
 
@@ -38,7 +38,7 @@ class MoviesStore {
     this.moviesData.movies = movies;
   };
 
-  setRelatedMovie = (movie: MovieType) => {
+  setRelatedMovie = (movie: MovieType | null) => {
     this.moviesData.relatedMovie = movie;
   };
 
@@ -68,6 +68,8 @@ class MoviesStore {
   };
 
   getRelatedMovie = async (movieId: string) => {
+    this.setRelatedMovie(null);
+
     try {
       const { data }: { data: MovieType } = await axios.get(`movie/${movieId}`);
       this.setRelatedMovie(data);

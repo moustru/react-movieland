@@ -20,5 +20,6 @@ export type MovieType = {
   adult: boolean;
   poster_path: string;
   vote_average: number;
+  vote_count: number;
   genres: MovieGenre[];
 };

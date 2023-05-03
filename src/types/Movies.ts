@@ -14,8 +14,8 @@ export type MovieType = {
   id: number;
   title: string;
   original_title: string;
-  tagline: string;
-  budget: number;
+  tagline: string | undefined;
+  budget: number | undefined;
   overview: string;
   adult: boolean;
   poster_path: string;

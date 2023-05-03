@@ -1,14 +1,16 @@
 import "./MovieList.css";
 import { FC, useEffect } from "react";
 import { observer } from "mobx-react-lite";
-import { moviesStore } from "@/store/movies";
 import Movie from "../Movie/Movie";
 import { Link } from "react-router-dom";
+import useStore from "@/hooks/useStore";
 
 const MovieListComponent: FC = () => {
+  const moviesStore = useStore();
+
   useEffect(() => {
-    moviesStore.getMovies();
-  }, []);
+    moviesStore.getMovies().then(() => console.log(moviesStore.moviesData));
+  }, [moviesStore]);
 
   if (moviesStore.moviesData.isLoading)
     return <div className="no-data">Загрузка...</div>;

@@ -20,7 +20,9 @@ export default function MoviePageView({
       <div className="movie-page__info">
         <h3 className="movie-page__info-title">{title}</h3>
         <p className="movie-page__info-text">{original_title}</p>
-        <p className="movie-page__info-text">{tagline}</p>
+        <p className="movie-page__info-text movie-page__info-text--small">
+          {tagline}
+        </p>
         <div className={`rating ${getRatingClass(vote_average)}`}>
           {vote_average}
           <span className="movie-page__info-text movie-page__info-votes">
